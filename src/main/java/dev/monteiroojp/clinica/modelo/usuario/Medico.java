@@ -65,4 +65,12 @@ public final class Medico extends Usuario{
         saldo = saldo.subtract(valor);
     }
 
+    @Override
+    public String toString() {
+        return "Medico{" + super.toString() +
+                ", crm=" + crm.getValue() +
+                ", ocupacao='" + ocupacao + "'" +
+                ", saldo=" + saldo +
+                "}";
+    }
 }
