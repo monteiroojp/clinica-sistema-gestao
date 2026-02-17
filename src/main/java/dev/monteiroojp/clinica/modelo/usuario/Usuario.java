@@ -108,7 +108,7 @@ public abstract class Usuario {
         return sexo;
     }
 
-    public void setSexo(Character sexo) {
+    public void setSexo(char sexo) {
         if(sexo != 'm' && sexo != 'M' && sexo != 'f' && sexo != 'F')
             throw new IllegalArgumentException("Sexo inválido");
 
@@ -142,5 +142,12 @@ public abstract class Usuario {
     @Override
     public int hashCode(){
         return this.cpf.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return "name='" + name + "'" +
+                ", cpf=" + cpf.getValue() +
+                ", email=" + email.getValue();
     }
 }
