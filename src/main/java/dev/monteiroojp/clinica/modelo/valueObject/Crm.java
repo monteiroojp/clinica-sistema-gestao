@@ -5,32 +5,32 @@ import java.util.Objects;
 
 public final class Crm {
 
-    private final String Value;
+    private final String value;
 
     public Crm(String value){
         if(value == null)
             throw new CrmInvalidoException("Crm não pode ser nulo");
 
-        if(!value.matches("^(CRO|CRM)/[A-Z]{2} \\d{4,6}$")){
+        if(!value.matches("^CRM/[A-Z]{2}\\s\\d{4,6}$")){
             throw new CrmInvalidoException("Formato de CRM inváldio");
         }
 
-        this.Value = value;
+        this.value = value;
     }
 
     public String getValue(){
-        return Value;
+        return value;
     }
 
     //Overrides da classe object
     @Override
     public int hashCode(){
-        return Objects.hash(Value);
+        return Objects.hash(value);
     }
 
     @Override
     public String toString(){
-        return Value;
+        return value;
     }
 
     @Override
@@ -42,6 +42,6 @@ public final class Crm {
             return false;
 
         Crm aux = (Crm) obj;
-        return this.Value.equals(aux.Value);
+        return this.value.equals(aux.value);
     }
 }

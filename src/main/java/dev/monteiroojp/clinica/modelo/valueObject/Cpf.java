@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public final class Cpf {
 
-    private final String Value;
+    private final String value;
 
     public Cpf(String value){
         if(value == null)
@@ -16,7 +16,7 @@ public final class Cpf {
             throw new CpfInvalidoException("Formato de CPF inválido ou todos dígitos iguais");
 
         value = normalize(value);
-        this.Value = value;
+        this.value = value;
     }
 
     private boolean validate(String cpf){
@@ -47,22 +47,22 @@ public final class Cpf {
     }
 
     public String getValue(){
-        return Value;
+        return value;
     }
 
     public String getValueFormatado() {
         return String.format("%s.%s.%s-%s",
-                Value.substring(0, 3),
-                Value.substring(3, 6),
-                Value.substring(6, 9),
-                Value.substring(9, 11)
+                value.substring(0, 3),
+                value.substring(3, 6),
+                value.substring(6, 9),
+                value.substring(9, 11)
         );
     }
 
     //Overrides da classe Object
     @Override
     public int hashCode() {
-        return Objects.hash(Value);
+        return Objects.hash(value);
     }
 
     @Override
@@ -80,7 +80,7 @@ public final class Cpf {
 
         Cpf aux = (Cpf) obj;
 
-        return this.Value.equals(aux.Value);
+        return this.value.equals(aux.value);
     }
 
 }

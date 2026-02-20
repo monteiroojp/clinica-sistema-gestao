@@ -9,14 +9,14 @@ import dev.monteiroojp.clinica.modelo.valueObject.Telefone;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public final class Medico extends Usuario{
+public final class Medico extends Funcionario{
 
     private Crm crm;
     private String ocupacao;
     private BigDecimal saldo;
 
-    public Medico(String name, Cpf cpf, Email email, Telefone telefone, LocalDate dataNascimento, char sexo, String senha, Crm crm, String ocupacao){
-        super(name, cpf, email, telefone, dataNascimento, sexo, senha);
+    public Medico(String name, Cpf cpf, Email email, Telefone telefone, LocalDate dataNascimento, char sexo, String senha, BigDecimal salarioBase, LocalDate dataAdmissao, Crm crm, String ocupacao){
+        super(name, cpf, email, telefone, dataNascimento, sexo, senha, salarioBase, dataAdmissao);
 
         if(crm == null)
             throw new IllegalArgumentException("CRM não pode ser vazio");
@@ -72,5 +72,10 @@ public final class Medico extends Usuario{
                 ", ocupacao='" + ocupacao + "'" +
                 ", saldo=" + saldo +
                 "}";
+    }
+
+    @Override
+    public BigDecimal calcularSalarioTotal(){
+        return salarioBase.add(saldo);
     }
 }

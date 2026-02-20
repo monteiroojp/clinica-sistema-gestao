@@ -5,6 +5,7 @@ import dev.monteiroojp.clinica.modelo.valueObject.Email;
 import dev.monteiroojp.clinica.modelo.valueObject.Telefone;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.Period;
 
 public abstract class Usuario {
@@ -16,6 +17,7 @@ public abstract class Usuario {
     protected LocalDate dataNascimento;
     protected char sexo;
     protected String senha;
+    protected LocalDateTime dataCriacao;
 
     public Usuario(String name, Cpf cpf, Email email, Telefone telefone, LocalDate dataNascimento, char sexo, String senha) {
         //Validações
@@ -51,6 +53,7 @@ public abstract class Usuario {
         this.dataNascimento = dataNascimento;
         this.sexo = Character.toUpperCase(sexo);
         this.senha = senha;
+        this.dataCriacao = LocalDateTime.now();
     }
 
     public String getName() {
@@ -120,6 +123,10 @@ public abstract class Usuario {
             throw new IllegalArgumentException("Senha não pode ser vazia");
 
         this.senha = senha;
+    }
+
+    public LocalDateTime getDataCriacao(){
+        return dataCriacao;
     }
 
     public int calcularIdade(){

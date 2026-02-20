@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public final class Email {
 
-    private final String Value;
+    private final String value;
 
     public Email(String value){
         if(value == null)
@@ -18,22 +18,22 @@ public final class Email {
             throw new EmailInvalidoException("Formato de email inválido");
         }
 
-        this.Value = value;
+        this.value = value;
     }
 
     public String getValue(){
-        return Value;
+        return value;
     }
 
     //Overrides da classe object
     @Override
     public int hashCode(){
-        return Objects.hash(Value);
+        return Objects.hash(value);
     }
 
     @Override
     public String toString(){
-        return Value;
+        return value;
     }
 
     @Override
@@ -45,6 +45,6 @@ public final class Email {
             return false;
 
         Email aux = (Email) obj;
-        return this.Value.equals(aux.Value);
+        return this.value.equals(aux.value);
     }
 }
