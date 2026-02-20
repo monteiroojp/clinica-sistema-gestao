@@ -69,9 +69,9 @@ public final class Medico extends Funcionario{
     public String toString() {
         return "Medico{" + super.toString() +
                 ", crm=" + crm.getValue() +
-                ", ocupacao='" + ocupacao + "'" +
+                ", ocupacao='" + ocupacao + '\'' +
                 ", saldo=" + saldo +
-                "}";
+                '}';
     }
 
     @Override

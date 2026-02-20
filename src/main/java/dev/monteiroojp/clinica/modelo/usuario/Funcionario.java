@@ -53,4 +53,11 @@ public abstract class Funcionario extends Usuario{
     }
 
     public abstract BigDecimal calcularSalarioTotal();
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                ", salarioBase=" + salarioBase +
+                ", dataAdmissao=" + dataAdmissao;
+    }
 }
