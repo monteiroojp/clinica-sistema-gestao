@@ -6,7 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class TelefoneTest {
+public class TelefoneTeste {
 
     //Testes de instancia correta
     @Test

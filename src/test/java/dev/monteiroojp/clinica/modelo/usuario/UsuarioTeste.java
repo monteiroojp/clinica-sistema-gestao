@@ -12,7 +12,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Period;
 
-public class UsuarioTest {
+public class UsuarioTeste {
 
     private static class UsuarioStub extends Usuario{
         UsuarioStub(String name, Cpf cpf, Email email, Telefone telefone, LocalDate dataNascimento, char sexo, String senha){
