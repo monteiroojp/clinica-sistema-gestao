@@ -28,6 +28,16 @@ public final class Plano {
         return id;
     }
 
+    public void setId(Long id) {
+        if (this.id != null) {
+            throw new IllegalStateException("ID já foi definido");
+        }
+        if (id == null) {
+            throw new IllegalArgumentException("ID não pode ser nulo");
+        }
+        this.id = id;
+    }
+
     public String getNome() {
         return nome;
     }
